@@ -3,8 +3,11 @@
 
 // strcmp return 0 if the strings are equal.
 #include <stdio.h>
+#include <string.h>
 #include "prots.h"
 #define MAX_LENGTH 200
+
+int kaloStrCmp2(char *array1, char *array2);
 
 int kaloStrCmp(char *array1, char *array2);
 
@@ -30,12 +33,14 @@ int main()
 
     printCheckingOfEquals(pStr1, pStr2);
 
+    printf("\n\n -- TESTING  :  %d   ; \n\n", kaloStrCmp2(pStr1, pStr2));
+    printf("\n\n -- TESTING 2  :  %d   ; \n\n", strcmp(pStr1, pStr2));
+
     return 0;
 }
 
 int kaloStrCmp(char *array1, char *array2)
 {
-
     int equalSize = (getLengthOfStr(array1) == getLengthOfStr(array2));
 
     if (!equalSize)
@@ -77,4 +82,34 @@ void printCheckingOfEquals(char *array1, char *array2)
     }
 
     putchar('\n');
+}
+
+int kaloStrCmp2(char *array1, char *array2)
+{
+    int arr1Len = strlen(array1);
+
+    int arr2Len = strlen(array2);
+
+    for (int i = 0; arr1Len != 0 || arr2Len != 0; i++, arr1Len--, arr2Len--)
+    {
+        if (*(array1 + i) < *(array2 + i))
+        {
+            return -1;
+        }
+        else if (*(array1 + i) > *(array2 + i))
+        {
+            return 1;
+        }
+    }
+
+    if (arr1Len != 0)
+    {
+        return -1;
+    }
+    else if (arr2Len != 0)
+    {
+        return 1;
+    }
+
+    return 0;
 }

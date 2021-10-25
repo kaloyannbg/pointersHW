@@ -14,6 +14,7 @@ of the alphabet that represent those sounds: Z, B, T, G, and H are all consonant
 
 int checkVowel(char c);
 int checkCons(char c);
+int isLetter(char c);
 
 int main()
 {
@@ -64,8 +65,19 @@ int checkVowel(char c)
 
 int checkCons(char c)
 {
-    int isLowerLetterCons = (c == 'z' || c == 'b' || c == 't' || c == 'g' || c == 'h');
-    int isUpperLettercons = (c == 'Z' || c == 'B' || c == 'T' || c == 'G' || c == 'H');
+    if (checkVowel(c))
+    {
+        return 0;
+    }
 
-    return (isLowerLetterCons || isUpperLettercons);
+    if(!isLetter(c)) {
+        return 0;
+    }
+
+    return 1;
+
+}
+
+int isLetter(char c) {
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
 }

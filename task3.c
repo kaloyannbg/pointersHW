@@ -18,15 +18,15 @@ int main()
 
     int *pointer1 = array1, *pointer2 = array2;
 
-    printArray(array1, SIZE);
+    printArray(pointer1, SIZE);
 
-    printArray(array2, SIZE);
+    printArray(pointer2, SIZE);
 
-    swapArray(array1, array2, SIZE);
+    swapArray(pointer1, pointer2, SIZE);
 
-    printArray(array1, SIZE);
+    printArray(pointer1, SIZE);
 
-    printArray(array2, SIZE);
+    printArray(pointer2, SIZE);
 
     return 0;
 }

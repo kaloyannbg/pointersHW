@@ -13,13 +13,13 @@ int main(void)
 
     printf(" Please enter first string: ");
 
-    scanf("%s", &array);
+    scanf("%[^\n]s", &array);
 
     fflush(stdin);
 
     printf(" Please enter second string: ");
 
-    scanf("%s", &array2);
+    scanf("%[^\n]s", &array2);
 
     stringConcatenation(array, array2);
 

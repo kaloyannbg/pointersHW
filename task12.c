@@ -19,10 +19,10 @@ int main()
     printf(" Enter some integer [x]: ");
     scanf("%d", pX);
 
-    printf(" Enter some integer [x]: ");
+    printf(" Enter some integer [y]: ");
     scanf("%d", pY);
 
-    printf(" Enter some integer [x]: ");
+    printf(" Enter some integer [z]: ");
     scanf("%d", pZ);
 
     sumPointerVariables(pX,pY,pZ,pTotal);

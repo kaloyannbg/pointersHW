@@ -18,11 +18,11 @@ int main(void)
 
     int *ptr2 = arr2;
 
-    getElements(arr, SIZE);
+    getElements(ptr, SIZE);
 
-    copyArray(arr, arr2);
+    copyArray(ptr, ptr2);
 
-    printArray(arr2);
+    printArray(ptr2);
 
 }
 
